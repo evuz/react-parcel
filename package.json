@@ -1,0 +1,33 @@
+{
+  "name": "parcel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "cordova": "^8.0.0",
+    "cordova-android": "^7.0.0",
+    "cordova-ios": "^4.5.4",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "parcel-bundler": "^1.8.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "styled-components": "^3.3.0"
+  },
+  "scripts": {
+    "build": "parcel build ./src/index.html -d www",
+    "dev": "parcel ./src/index.html",
+    "android": "npm run build && node ./scripts/cordovaPrepare.js && cordova run android",
+    "ios": "npm run build && npm run cordova:prepare && cordova run ios",
+    "cordova:prepare": "node ./scripts/cordovaPrepare.js"
+  },
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {}
+    }
+  }
+}
