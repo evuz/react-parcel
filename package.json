@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "parcel build ./src/index.html -d www",
-    "dev": "parcel ./src/index.html",
+    "dev": "parcel ./src/index.html -d www",
     "android": "npm run build && node ./scripts/cordovaPrepare.js && cordova run android",
     "ios": "npm run build && npm run cordova:prepare && cordova run ios",
     "cordova:prepare": "node ./scripts/cordovaPrepare.js"
