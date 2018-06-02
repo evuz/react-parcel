@@ -9,7 +9,10 @@
     "cordova-android": "^7.0.0",
     "cordova-ios": "^4.5.4",
     "cordova-plugin-whitelist": "^1.3.3",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
     "parcel-bundler": "^1.8.1",
+    "prettier": "^1.13.4",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
@@ -20,7 +23,9 @@
     "dev": "parcel ./src/index.html -d www",
     "android": "npm run build && node ./scripts/cordovaPrepare.js && cordova run android",
     "ios": "npm run build && npm run cordova:prepare && cordova run ios",
-    "cordova:prepare": "node ./scripts/cordovaPrepare.js"
+    "cordova:prepare": "node ./scripts/cordovaPrepare.js",
+    "lint": "eslint src/**/*.jsx src/**/*.js",
+    "format": "prettier --write 'src/**/*.js' 'src/**/*.jsx'"
   },
   "cordova": {
     "platforms": [
@@ -30,5 +35,11 @@
     "plugins": {
       "cordova-plugin-whitelist": {}
     }
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2"
   }
 }
