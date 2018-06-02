@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { App } from './app/app';
-import './reset.css';
+import './assets/reset.css';
+import './assets/fontawesome-all';
 
 ReactDOM.render(<App />, document.getElementById('app'));
