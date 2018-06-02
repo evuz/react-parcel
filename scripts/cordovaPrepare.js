@@ -12,6 +12,7 @@ function readFile() {
         }
         html = html.replace(/"\/src./g, '"src.');
         html = html.replace('<script', '<script type="text/javascript" src="cordova.js"></script> <script');
+        html = html.replace('<head>', '<head><meta http-equiv="Content-Security-Policy" content="default-src \'self\' data: gap: https://ssl.gstatic.com \'unsafe-eval\'; style-src \'self\' \'unsafe-inline\'; media-src *; img-src \'self\' data: content:;"><meta name="format-detection" content="telephone=no"><meta name="msapplication-tap-highlight" content="no">')
         writeFile(html);
     })
 }
