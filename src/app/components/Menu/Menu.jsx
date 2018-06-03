@@ -54,7 +54,7 @@ class Menu extends Component {
   };
 
   render() {
-    const { children, animationTime, ...props } = this.props;
+    const { children, animationTime, open, close, ...props } = this.props;
     const { show, leave } = this.state;
     if (!show) return null;
     const showDrawer = show && !leave;
