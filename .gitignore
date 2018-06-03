@@ -4,3 +4,4 @@ www
 dist
 plugins
 platforms
+package-lock.json
