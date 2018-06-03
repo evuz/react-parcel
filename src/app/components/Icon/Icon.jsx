@@ -7,7 +7,7 @@ const I = styled.div`
   color: ${({ color }) => color};
 `;
 
-export const Icon = ({ icon, ...props }) => {
+const Icon = ({ icon, ...props }) => {
   const iconClass = `fas fa-${icon}`;
   return <I className={iconClass} {...props} />;
 };
@@ -22,3 +22,5 @@ Icon.defaultProps = {
   size: 'inherit',
   color: 'black',
 };
+
+export default Icon;

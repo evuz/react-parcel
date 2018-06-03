@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-export const Container = styled.div`
+const Container = styled.div`
   width: 100%;
   min-height: 200vh;
   background: linear-gradient(lightgreen, lightsalmon);
@@ -21,3 +21,5 @@ Container.defaultProps = {
   marginTop: '56px',
   marginBottom: '0px',
 };
+
+export default Container;

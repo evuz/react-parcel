@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-export const Header = styled.div`
+const Header = styled.div`
   width: 100%;
   position: ${({ fixed }) => (fixed ? 'fixed' : 'absolute')};
   opacity: 1;
@@ -26,3 +26,5 @@ Header.defaultProps = {
   backgroundColor: 'lightgray',
   fixed: false,
 };
+
+export default Header;

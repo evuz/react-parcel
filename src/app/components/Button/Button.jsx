@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-export const Button = styled.button`
+const Button = styled.button`
   border: none;
   padding: 0;
   cursor: pointer;
@@ -15,3 +15,5 @@ Button.propTypes = {
 Button.defaultProps = {
   backgroundColor: 'transparent',
 };
+
+export default Button;
