@@ -14,17 +14,24 @@ export const MenuComponent = styled.div`
   height: 100%;
   width: ${({ width }) => width};
   background-color: ${({ backgroundColor }) => backgroundColor};
-  transition: margin-left ${({ animationTime }) => animationTime}ms;
-  &.slide-in-appear {
-    margin-left: ${({ width }) => `-${width}`};
-    &.slide-in-appear-active {
-      margin-left: 0;
-    }
-  }
-  &.slide-in-leave {
-    margin-left: 0;
-    &.slide-in-leave-active {
-      margin-left: ${({ width }) => `-${width}`};
-    }
-  }
+  transition: all ${({ animationTime }) => animationTime}ms;
+  transition-property: margin-left, margin-right;
+  position: absolute;
+  ${({ right, width }) => {
+    const position = right ? 'right' : 'left';
+    return `
+        ${position}: 0;
+        &.slide-in-appear {
+            margin-${position}: -${width};
+            &-active {
+                margin-${position}: 0;
+            }
+        }
+        &.slide-in-exit {
+            margin-${position}: 0;
+            &.slide-in-exit-active {
+                margin-${position}: -${width};
+            }
+        }`;
+  }};
 `;

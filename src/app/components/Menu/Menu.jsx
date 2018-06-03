@@ -8,6 +8,7 @@ class Menu extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     width: PropTypes.string,
+    right: PropTypes.bool,
     animationTime: PropTypes.number,
     backgroundColor: PropTypes.string,
     open: PropTypes.func,
@@ -16,6 +17,7 @@ class Menu extends Component {
 
   static defaultProps = {
     width: '70%',
+    right: false,
     backgroundColor: 'white',
     animationTime: 700,
     open: () => {},
@@ -59,9 +61,9 @@ class Menu extends Component {
     return (
       <Root onClick={this.close}>
         <CSSTransition in={showDrawer} appear classNames="slide-in" timeout={animationTime}>
-            <MenuComponent {...props} animationTime={animationTime} onClick={this.handleMenuClick}>
-              {children}
-            </MenuComponent>
+          <MenuComponent {...props} animationTime={animationTime} onClick={this.handleMenuClick}>
+            {children}
+          </MenuComponent>
         </CSSTransition>
       </Root>
     );
