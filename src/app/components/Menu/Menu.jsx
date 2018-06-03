@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { CSSTransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 
 import { Root, MenuComponent } from './components';
 
@@ -55,21 +55,14 @@ class Menu extends Component {
     const { children, animationTime, ...props } = this.props;
     const { show, leave } = this.state;
     if (!show) return null;
+    const showDrawer = show && !leave;
     return (
       <Root onClick={this.close}>
-        <CSSTransitionGroup
-          transitionName="slide-in"
-          transitionAppear
-          transitionEnter={false}
-          transitionAppearTimeout={animationTime}
-          transitionLeaveTimeout={animationTime}
-        >
-          {!leave ? (
+        <CSSTransition in={showDrawer} appear classNames="slide-in" timeout={animationTime}>
             <MenuComponent {...props} animationTime={animationTime} onClick={this.handleMenuClick}>
               {children}
             </MenuComponent>
-          ) : null}
-        </CSSTransitionGroup>
+        </CSSTransition>
       </Root>
     );
   }
